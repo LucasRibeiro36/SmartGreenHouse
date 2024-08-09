@@ -34,9 +34,6 @@
         <th>ID</th>
         <th>Humidity</th>
         <th>Temperature (°C)</th>
-        <th>Temperature (°F)</th>
-        <th>Heat Index (°C)</th>
-        <th>Heat Index (°F)</th>
         <th>Timestamp</th>
     </tr>
     </thead>
@@ -59,10 +56,7 @@
                         `<tr>
                             <td>${item.id}</td>
                             <td>${item.humidity}%</td>
-                            <td>${item.temperature_celsius}°C</td>
-                            <td>${item.temperature_fahrenheit}°F</td>
-                            <td>${item.heat_index_celsius}°C</td>
-                            <td>${item.heat_index_fahrenheit}°F</td>
+                            <td>${item.temperature}°C</td>
                             <td>${item.created_at}</td>
                         </tr>`
                     ).join('')
