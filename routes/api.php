@@ -22,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/get_latest_temp_data', [TempSensorDataController::class, 'getLatestData']);
 Route::get('/get_latest_soil_data', [SoilSensorDataController::class, 'getLatestData']);
+Route::post('/save_temp_data', [TempSensorDataController::class, 'saveData']);
+Route::post('/save_soil_data', [SoilSensorDataController::class, 'saveData']);

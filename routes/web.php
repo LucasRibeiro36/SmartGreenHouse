@@ -20,8 +20,7 @@ Route::get('/', function () {
 
 use App\Http\Controllers\TempSensorDataController;
 
-Route::post('/save_temp_data', [TempSensorDataController::class, 'saveData']);
-Route::post('/save_soil_data', [SoilSensorDataController::class, 'saveData']);
+
 Route::get('/show_temp_data', [TempSensorDataController::class, 'showData']);
 Route::get('/show_soil_data', [SoilSensorDataController::class, 'showData']);
 Route::get('/show_temp_graph_data', [TempSensorDataController::class, 'showGraphData']);
