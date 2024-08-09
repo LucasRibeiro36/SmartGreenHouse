@@ -13,9 +13,6 @@ class TempSensorData extends Model
 
     protected $fillable = [
         'humidity',
-        'temperature_celsius',
-        'temperature_fahrenheit',
-        'heat_index_celsius',
-        'heat_index_fahrenheit'
+        'temperature',
     ];
 }
