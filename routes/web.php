@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SoilSensorDataController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,8 @@ use App\Http\Controllers\TempSensorDataController;
 Route::get('/show_temp_data', [TempSensorDataController::class, 'showData']);
 Route::get('/show_soil_data', [SoilSensorDataController::class, 'showData']);
 Route::get('/show_temp_graph_data', [TempSensorDataController::class, 'showGraphData']);
+// dashboard
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
 
 

@@ -52,7 +52,7 @@
                 var tempData = [];
                 var humidityData = [];
                 $.each(org_data, function (key, val) {
-                    tempData.push({ name: val.id.toString(), y: val.temperature_celsius });
+                    tempData.push({ name: val.id.toString(), y: val.temperature });
                     humidityData.push({ name: val.id.toString(), y: val.humidity });
                 });
 

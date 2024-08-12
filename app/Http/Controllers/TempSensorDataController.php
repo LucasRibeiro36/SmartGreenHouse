@@ -11,7 +11,7 @@ class TempSensorDataController extends Controller
     {
         $tempSensorData = new TempSensorData();
         $tempSensorData->humidity = $request->input('humidity');
-        $tempSensorData->temperature_celsius = $request->input('temperature');
+        $tempSensorData->temperature = $request->input('temperature');
         $tempSensorData->save();
 
         return response()->json(['message' => 'Data saved successfully'], 200);
