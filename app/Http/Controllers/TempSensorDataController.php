@@ -28,7 +28,7 @@ class TempSensorDataController extends Controller
     }
     public function getLatestData()
     {
-        $data = TempSensorData::orderBy('created_at', 'desc')->limit(500)->get();
+        $data = TempSensorData::orderBy('created_at', 'desc')->limit(20)->get();
 
         return response()->json($data);
     }
