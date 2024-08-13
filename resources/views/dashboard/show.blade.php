@@ -3,8 +3,31 @@
 @section('title', 'Temperature and Humidity Dashboard')
 
 @section('content')
+
 <div id="dashboard">
-    <h1 class="text-center my-4">Temperature and Humidity Dashboard</h1>
+
+    <div class="cards d-flex container justify-content-center" style="max-width: 500px;">
+        
+        <div class="container d-block status-card" style="margin-right: 4px; max-width: 200px; max-height: 200px;">
+            <p><i class="bi bi-cloud"></i>  Temperatura Atual</p>
+            <p>23.5°</p>
+        </div> 
+
+        <div class="container d-block status-card" style="margin-right: 4px; max-width: 200px; max-height: 200px;">
+            <p>Umidade Atual</p>
+            <p>23.5°</p>
+        </div>    
+
+
+    </div>
+
+    <div class="clock d-flex justify-content-center mt-4" style="align-items: center;">
+        <h2 id="clock">00:00 |</h2> 
+        <p><i class="bi bi-clock" style="margin-right: 4px"></i>Horário de Brasília</p>
+    </div>
+    
+
+    <h1 class="text-center my-4">Monitor de Temperatura e Umidade</h1>
 
     <div id="charts">
         <div id="chartTempDiv" class="chart-container"></div>
@@ -16,9 +39,9 @@
             <thead>
                 <tr class="table-primary">
                     <th>ID</th>
-                    <th>Humidity (%)</th>
-                    <th>Temperature (°C)</th>
-                    <th class="timestamp-column">Timestamp</th>
+                    <th>Umidade (%)</th>
+                    <th>Temperatura (°C)</th>
+                    <th class="timestamp-column">Fuso-Horário</th>
                 </tr>
             </thead>
             <tbody id="temperature-data">
@@ -34,7 +57,7 @@
 @push('styles')
 <style>
     body, html {
-        background: linear-gradient(135deg, #0D47A1, #1976D2, #2196F3, #64B5F6);
+        background: linear-gradient(135deg, #7a01c4, #7a02c9, #2196F3, #64B5F6);
         color: #eee;
         margin: 0;
         padding: 0;
@@ -43,6 +66,11 @@
 
     h1 {
         color: #fff;
+    }
+
+    .status-card{
+        border-radius: 20px;
+        border: 1px solid white;
     }
 
     #charts {
@@ -57,7 +85,7 @@
         min-width: 100%;
         max-width: 100%;
         height: 300px;
-        background-color: #1E88E5;
+        background-color: ##7a01c4;
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         padding: 10px;
@@ -148,6 +176,18 @@
 
 @push('scripts')
 <script>
+
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        document.getElementById('clock').textContent = `${hours}:${minutes} |`;
+    }
+
+    setInterval(updateClock, 60000);
+
+    updateClock();
+
     $(document).ready(function () {
         var chartTemp = JSC.Chart('chartTempDiv', {
             type: 'line',

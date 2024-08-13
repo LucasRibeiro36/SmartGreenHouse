@@ -7,6 +7,7 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -19,7 +20,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Trebuchet MS', sans-serif;
-            background: linear-gradient(135deg, #0D47A1, #1976D2, #2196F3, #64B5F6);
+            background: linear-gradient(135deg, ##7a01c4, ##7a01c8, ##7a01c9, #64B5F6);
             color: #eee;
             box-sizing: border-box;
             height: 100%;
@@ -44,7 +45,7 @@
             min-width: 300px;
             height: 300px;
             border-radius: 15px;
-            background-color: #1E88E5;
+            background-color: ##7a01c4;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -98,26 +99,26 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Dashboard</a>
+            <a class="navbar-brand" href="#"><img src=" {{ asset('images/logo.png')}}" width="80" height="80"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Dashboard</a>
+                        <a class="nav-link active d-flex" href="#"><i class="bi bi-clipboard-data" style="margin-right: 4px"></i><p>Dashboard</p></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Temperature Data</a>
+                        <a class="nav-link" href="#"><i class="bi bi-thermometer"></i>Dados de Temperatura</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Humidity Data</a>
+                        <a class="nav-link" href="#"><i class="bi bi-thermometer"></i>Dados de Umidade</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
+                        <a class="nav-link d-flex" href="#"><i class="bi bi-gear" style="margin-right: 4px;"></i><p>Configurações</p></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link d-flex" href="#"><i class="bi bi-person" style="margin-right: 4px"></i><p>Perfil</p></a>
                     </li>
                 </ul>
             </div>
